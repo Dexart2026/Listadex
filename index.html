@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listadex | Lista de Tarefas</title>
+  <meta
+    name="description"
+    content="Lista de tarefas moderna com prioridade, data limite, busca, categorias, progresso e drag and drop."
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="lista.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <main class="app">
+    <section class="todo-card">
+      <header class="todo-header">
+        <div class="header-text">
+          <p class="eyebrow">Organização e produtividade</p>
+          <h1>Listadex <span>Pro</span></h1>
+          <p class="subtitle">
+            Gerencie tarefas com categorias, prioridades, prazos e progresso visual.
+          </p>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </header>
+
+      <section class="progress-card">
+        <div class="progress-header">
+          <div>
+            <h2>Seu progresso</h2>
+            <p id="taskCounter">0 tarefas no total</p>
+          </div>
+          <strong id="progressPercent">0%</strong>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </section>
+
+      <form class="todo-form" id="todoForm">
+        <div class="input-wrapper">
+          <i class="fa-solid fa-pen"></i>
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Digite uma nova tarefa..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-grid">
+          <div class="select-wrapper">
+            <label for="taskCategory">Categoria</label>
+            <select id="taskCategory">
+              <option value="Estudos">Estudos</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Pessoal">Pessoal</option>
+              <option value="Projetos">Projetos</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <label for="taskPriority">Prioridade</label>
+            <select id="taskPriority">
+              <option value="Baixa">Baixa</option>
+              <option value="Média" selected>Média</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <label for="taskDate">Data limite</label>
+            <input type="date" id="taskDate" />
+          </div>
+        </div>
+
+        <button type="submit" class="add-btn">
+          <i class="fa-solid fa-plus"></i>
+          Adicionar
+        </button>
+      </form>
+
+      <section class="todo-toolbar">
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-filter="all" type="button">Todas</button>
+          <button class="filter-btn" data-filter="pending" type="button">Pendentes</button>
+          <button class="filter-btn" data-filter="done" type="button">Concluídas</button>
+        </div>
+
+        <div class="toolbar-actions">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar tarefa..." />
+          </div>
+
+          <button class="clear-btn" id="clearDoneBtn" type="button">
+            <i class="fa-solid fa-broom"></i>
+            Limpar concluídas
+          </button>
+        </div>
+      </section>
+
+      <ul class="todo-list" id="todoList"></ul>
+
+      <div class="empty-state" id="emptyState">
+        <i class="fa-regular fa-note-sticky"></i>
+        <p>Nenhuma tarefa encontrada.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-box">
+      <h3>Excluir tarefa?</h3>
+      <p>Essa ação não poderá ser desfeita.</p>
+      <div class="modal-actions">
+        <button class="modal-btn cancel" id="cancelDeleteBtn" type="button">Cancelar</button>
+        <button class="modal-btn confirm" id="confirmDeleteBtn" type="button">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="lista.js"></script>
+</body>
+</html>
