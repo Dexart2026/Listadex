@@ -11,7 +11,7 @@ Além da criação, conclusão e exclusão de tarefas, o projeto também inclui 
 
 ![Preview do TaskFlow Pro](./imagens/Print1.png)
 
-[Ver projeto online](https://seu-link-aqui.com)
+[Ver projeto online](https://dexart2026.github.io/Listadex/)
 
 ## Funcionalidades
 
